@@ -61,7 +61,7 @@ public class Log {
         error, warn, info, debug, trace;
     };
 
-    private final Logger mLogger;
+    private final org.apache.logging.log4j.Logger mLogger;
 
     Log(org.apache.logging.log4j.Logger logger) {
         if (logger == null) {
@@ -545,8 +545,8 @@ public class Log {
     }
 
 
-    public void setLevel(Level level) {
-        mLogger.setLevel(ZIMBRA_TO_LOG4J.get(level));
+    public void setLevel(String accountName ,Level level) {
+        Configurator.setLevel(accountName, org.apache.logging.log4j.Level.DEBUG);
     }
 
     public Level getLevel() {
