@@ -92,7 +92,6 @@ public final class LogFactory {
      */
     public static boolean logExists(String name) {
         return (LogManager.exists(name));
-        
     }
 
     /**
