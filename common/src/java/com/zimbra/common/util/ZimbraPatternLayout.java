@@ -20,7 +20,7 @@ public class ZimbraPatternLayout extends LogEventPatternConverter {
 
     @Override
     public void format(LogEvent event, StringBuilder toAppendTo) {
-        toAppendTo.append(ZimbraLog.getContextString());
+        toAppendTo.append(ZimbraLog.getContextString() == null ? "" : ZimbraLog.getContextString());
     }
 
 }
