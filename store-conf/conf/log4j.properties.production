@@ -142,7 +142,7 @@ appender.SYSLOG.layout.pattern = mailboxd: %-5p [%t] [%z] %c{1} - %m
 %%comment VAR:!zimbraLogHostname%%appender.SLOGGER.layout.pattern = mailboxd: %-5p [%t] [%z] %c{1} - %m
 
 logger.zimbra.name = zimbra.mailbox
-logger.zimbra.level = debug
+logger.zimbra.level = info
 logger.zimbra.additivity = false
 logger.zimbra.appenderRef.LOGFILE.ref = mailboxFile
 
@@ -204,7 +204,6 @@ logger.syslog.appenderRef.SYSLOG.ref = syslogAppender
 %%comment VAR:!zimbraLogHostname%%logger.slogger.additivity = false
 %%comment VAR:!zimbraLogHostname%%logger.slogger.appenderRef.SLOGGER.ref = sloggerAppender
 
-%%uncomment VAR:!zimbraLogToSyslog%%rootLogger.level=INFO,LOGFILE
-%%uncomment VAR:zimbraLogToSyslog%%rootLogger.level=INFO,LOGFILE,SYSLOG
+rootLogger.level=INFO
 
 rootLogger.appenderRef.LOGFILE.ref = mailboxFile
