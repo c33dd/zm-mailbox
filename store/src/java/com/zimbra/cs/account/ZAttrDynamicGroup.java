@@ -731,6 +731,88 @@ public abstract class ZAttrDynamicGroup extends Group {
     }
 
     /**
+     * Whether to send an email with all the shares of the group when a new
+     * member is added to the group. If not set, default is to send the
+     * email.
+     *
+     * @return zimbraDistributionListSendShareMessageToNewMembers, or false if unset
+     *
+     * @since ZCS 6.0.0_BETA1
+     */
+    @ZAttr(id=810)
+    public boolean isDistributionListSendShareMessageToNewMembers() {
+        return getBooleanAttr(Provisioning.A_zimbraDistributionListSendShareMessageToNewMembers, false, true);
+    }
+
+    /**
+     * Whether to send an email with all the shares of the group when a new
+     * member is added to the group. If not set, default is to send the
+     * email.
+     *
+     * @param zimbraDistributionListSendShareMessageToNewMembers new value
+     * @throws com.zimbra.common.service.ServiceException if error during update
+     *
+     * @since ZCS 6.0.0_BETA1
+     */
+    @ZAttr(id=810)
+    public void setDistributionListSendShareMessageToNewMembers(boolean zimbraDistributionListSendShareMessageToNewMembers) throws com.zimbra.common.service.ServiceException {
+        HashMap<String,Object> attrs = new HashMap<String,Object>();
+        attrs.put(Provisioning.A_zimbraDistributionListSendShareMessageToNewMembers, zimbraDistributionListSendShareMessageToNewMembers ? TRUE : FALSE);
+        getProvisioning().modifyAttrs(this, attrs);
+    }
+
+    /**
+     * Whether to send an email with all the shares of the group when a new
+     * member is added to the group. If not set, default is to send the
+     * email.
+     *
+     * @param zimbraDistributionListSendShareMessageToNewMembers new value
+     * @param attrs existing map to populate, or null to create a new map
+     * @return populated map to pass into Provisioning.modifyAttrs
+     *
+     * @since ZCS 6.0.0_BETA1
+     */
+    @ZAttr(id=810)
+    public Map<String,Object> setDistributionListSendShareMessageToNewMembers(boolean zimbraDistributionListSendShareMessageToNewMembers, Map<String,Object> attrs) {
+        if (attrs == null) attrs = new HashMap<String,Object>();
+        attrs.put(Provisioning.A_zimbraDistributionListSendShareMessageToNewMembers, zimbraDistributionListSendShareMessageToNewMembers ? TRUE : FALSE);
+        return attrs;
+    }
+
+    /**
+     * Whether to send an email with all the shares of the group when a new
+     * member is added to the group. If not set, default is to send the
+     * email.
+     *
+     * @throws com.zimbra.common.service.ServiceException if error during update
+     *
+     * @since ZCS 6.0.0_BETA1
+     */
+    @ZAttr(id=810)
+    public void unsetDistributionListSendShareMessageToNewMembers() throws com.zimbra.common.service.ServiceException {
+        HashMap<String,Object> attrs = new HashMap<String,Object>();
+        attrs.put(Provisioning.A_zimbraDistributionListSendShareMessageToNewMembers, "");
+        getProvisioning().modifyAttrs(this, attrs);
+    }
+
+    /**
+     * Whether to send an email with all the shares of the group when a new
+     * member is added to the group. If not set, default is to send the
+     * email.
+     *
+     * @param attrs existing map to populate, or null to create a new map
+     * @return populated map to pass into Provisioning.modifyAttrs
+     *
+     * @since ZCS 6.0.0_BETA1
+     */
+    @ZAttr(id=810)
+    public Map<String,Object> unsetDistributionListSendShareMessageToNewMembers(Map<String,Object> attrs) {
+        if (attrs == null) attrs = new HashMap<String,Object>();
+        attrs.put(Provisioning.A_zimbraDistributionListSendShareMessageToNewMembers, "");
+        return attrs;
+    }
+
+    /**
      * distribution subscription policy. ACCEPT: always accept, REJECT:
      * always reject, APPROVAL: require owners approval.
      *
