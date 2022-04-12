@@ -194,9 +194,13 @@ logger.syslog.appenderRef.SYSLOG.ref = syslogAppender
 
 # HttpMethodBase spews out too many WARN on the badly formatted cookies.
 #logger.org.apache.commons.httpclient.HttpMethodBase=ERROR
+logger.httpmethodbase.name = org.apache.commons.httpclient.HttpMethodBase
+logger.httpmethodbase.level = ERROR
 
 # spymemcached is too verbose at INFO level.
 #logger.net.spy.memcached=WARN
+logger.memcached.name = net.spy.memcached
+logger.memcached.level = WARN
 
 %%comment VAR:!zimbraLogHostname%%logger.slogger.name = zimbra.slogger
 %%comment VAR:!zimbraLogHostname%%logger.slogger.level=INFO,SLOGGER
